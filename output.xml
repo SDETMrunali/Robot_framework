@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.0.3 (Python 3.10.3 on win32)" generated="20230504 14:03:39.726" rpa="false" schemaversion="2">
+<suite id="s1" name="Testcase" source="C:\Users\mbarapatre\PycharmProjects\pythonMyProject\login_folder\testcase">
+<suite id="s1-s1" name="Login Testcase" source="C:\Users\mbarapatre\PycharmProjects\pythonMyProject\login_folder\testcase\login_testcase.robot">
+<kw name="Run Keywords" library="BuiltIn" type="SETUP">
+<arg>Login</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<kw name="Login">
+<kw name="Login to FO" library="keyword_commonAction">
+<arg>${username}</arg>
+<arg>${password}</arg>
+<arg>${url}</arg>
+<kw name="info" library="Logger">
+<arg>user: ${user} password: ${password} url: ${url}</arg>
+<kw name="Log" library="BuiltIn">
+<arg>${\n}Info Log--&gt;: ${message} :${\n}</arg>
+<arg>level=${logLevel}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230504 14:03:40.923" level="INFO">
+Info Log--&gt;: user: scan_na password: Qatemp123# url: https://qualysguard.p01.eng.sjc01.qualys.com :
+</msg>
+<status status="PASS" starttime="20230504 14:03:40.923" endtime="20230504 14:03:40.923"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${\n}Info Log--&gt;: ${message} :${\n}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230504 14:03:40.923" endtime="20230504 14:03:40.924"/>
+</kw>
+<status status="PASS" starttime="20230504 14:03:40.922" endtime="20230504 14:03:40.924"/>
+</kw>
+<kw name="Get Chrome" library="keyword_commonAction">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${Arg_url}/qglogin/index.html?status=timeout</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230504 14:03:40.925" level="INFO">Opening browser 'Chrome' to base url 'https://qualysguard.p01.eng.sjc01.qualys.com/qglogin/index.html?status=timeout'.</msg>
+<msg timestamp="20230504 14:03:40.944" level="INFO">Executing: C:\Users\mbarapatre\AppData\Local\Programs\Python\Python310\Lib\site-packages\selenium\webdriver\common\windows\selenium-manager.exe --browser chrome --output json</msg>
+<status status="PASS" starttime="20230504 14:03:40.924" endtime="20230504 14:03:57.929"/>
+</kw>
+<status status="PASS" starttime="20230504 14:03:40.924" endtime="20230504 14:03:57.929"/>
+</kw>
+<kw name="Set Browser Implicit Wait" library="SeleniumLibrary">
+<arg>10s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20230504 14:03:57.929" endtime="20230504 14:03:57.931"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>10s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20230504 14:03:57.931" endtime="20230504 14:03:57.932"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${fo_userlogin_username_Inputbox}</arg>
+<arg>${user}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230504 14:03:57.932" level="INFO">Typing text 'scan_na' into text field '//input[@name='UserLogin']'.</msg>
+<status status="PASS" starttime="20230504 14:03:57.932" endtime="20230504 14:03:58.067"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${fo_userlogin_password_Inputbox}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230504 14:03:58.070" level="INFO">Typing text 'Qatemp123#' into text field '//input[@name='UserPasswd']'.</msg>
+<status status="PASS" starttime="20230504 14:03:58.068" endtime="20230504 14:03:58.168"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${fo_userlogin_login_button}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230504 14:03:58.168" level="INFO">Clicking button '//input[@type='submit']'.</msg>
+<status status="PASS" starttime="20230504 14:03:58.168" endtime="20230504 14:03:58.230"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Call QWEB version API</arg>
+<arg>${user}</arg>
+<arg>${password}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Call QWEB version API">
+<arg>${user}</arg>
+<arg>${password}</arg>
+<msg timestamp="20230504 14:03:58.238" level="FAIL">No keyword with name 'Call QWEB version API' found.</msg>
+<status status="FAIL" starttime="20230504 14:03:58.238" endtime="20230504 14:03:58.238"/>
+</kw>
+<status status="PASS" starttime="20230504 14:03:58.230" endtime="20230504 14:03:58.238"/>
+</kw>
+<kw name="Wait Until Page Does Not Contain Element" library="SeleniumLibrary">
+<arg>${wait_Refreshing_Data}</arg>
+<arg>${configurable_wait_time}</arg>
+<doc>Waits until the element ``locator`` disappears from the current page.</doc>
+<status status="PASS" starttime="20230504 14:03:58.238" endtime="20230504 14:04:08.595"/>
+</kw>
+<kw name="Wait Until Page Does Not Contain Element" library="SeleniumLibrary">
+<arg>${wait_Loading_VM}</arg>
+<doc>Waits until the element ``locator`` disappears from the current page.</doc>
+<status status="PASS" starttime="20230504 14:04:08.595" endtime="20230504 14:04:18.650"/>
+</kw>
+<status status="PASS" starttime="20230504 14:03:40.922" endtime="20230504 14:04:18.650"/>
+</kw>
+<status status="PASS" starttime="20230504 14:03:40.921" endtime="20230504 14:04:18.650"/>
+</kw>
+<status status="PASS" starttime="20230504 14:03:40.921" endtime="20230504 14:04:18.650"/>
+</kw>
+<test id="s1-s1-t1" name="Test Case 01: Navigate to PC">
+<kw name="info" library="Logger">
+<arg>test</arg>
+<kw name="Log" library="BuiltIn">
+<arg>${\n}Info Log--&gt;: ${message} :${\n}</arg>
+<arg>level=${logLevel}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230504 14:04:18.652" level="INFO">
+Info Log--&gt;: test :
+</msg>
+<status status="PASS" starttime="20230504 14:04:18.651" endtime="20230504 14:04:18.652"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${\n}Info Log--&gt;: ${message} :${\n}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230504 14:04:18.652" endtime="20230504 14:04:18.652"/>
+</kw>
+<status status="PASS" starttime="20230504 14:04:18.651" endtime="20230504 14:04:18.652"/>
+</kw>
+<tag>PC</tag>
+<tag>PC_OndemandScan</tag>
+<tag>PC_Regression</tag>
+<tag>PC_Scan</tag>
+<tag>test</tag>
+<status status="PASS" starttime="20230504 14:04:18.650" endtime="20230504 14:04:18.652"/>
+</test>
+<kw name="Run Keywords" library="BuiltIn" type="TEARDOWN">
+<arg>Logout</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<kw name="Logout">
+<kw name="Logout from FO" library="keyword_commonAction">
+<kw name="Switch Window" library="SeleniumLibrary">
+<arg>main</arg>
+<arg>timeout=5s</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" starttime="20230504 14:04:18.653" endtime="20230504 14:04:18.663"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}/fo/login.php?logout=1</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230504 14:04:18.664" level="INFO">Opening url 'https://qualysguard.p01.eng.sjc01.qualys.com/fo/login.php?logout=1'</msg>
+<status status="PASS" starttime="20230504 14:04:18.664" endtime="20230504 14:04:26.865"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20230504 14:04:26.866" endtime="20230504 14:04:33.157"/>
+</kw>
+<status status="PASS" starttime="20230504 14:04:18.653" endtime="20230504 14:04:33.158"/>
+</kw>
+<status status="PASS" starttime="20230504 14:04:18.653" endtime="20230504 14:04:33.158"/>
+</kw>
+<status status="PASS" starttime="20230504 14:04:18.653" endtime="20230504 14:04:33.158"/>
+</kw>
+<doc>login testcase</doc>
+<status status="PASS" starttime="20230504 14:03:39.764" endtime="20230504 14:04:33.158"/>
+</suite>
+<status status="PASS" starttime="20230504 14:03:39.729" endtime="20230504 14:04:33.161"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">PC</stat>
+<stat pass="1" fail="0" skip="0">PC_OndemandScan</stat>
+<stat pass="1" fail="0" skip="0">PC_Regression</stat>
+<stat pass="1" fail="0" skip="0">PC_Scan</stat>
+<stat pass="1" fail="0" skip="0">test</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Testcase">Testcase</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Login Testcase">Testcase.Login Testcase</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20230504 14:03:40.261" level="WARN">Imported library 'C:\Users\mbarapatre\PycharmProjects\pythonMyProject\General\Utilities\autoUtil.py' contains no keywords.</msg>
+<msg timestamp="20230504 14:03:40.902" level="WARN">Imported library 'C:\Users\mbarapatre\PycharmProjects\pythonMyProject\General\Locators\locator.py' contains no keywords.</msg>
+</errors>
+</robot>
